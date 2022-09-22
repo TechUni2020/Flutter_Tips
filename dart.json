@@ -1,0 +1,108 @@
+{
+    "Freezed State": {
+        "prefix": "freezedstate",
+        "body": [
+            "// ignore: unused_import",
+            "import 'package:flutter/foundation.dart';",
+            "import 'package:freezed_annotation/freezed_annotation.dart';",
+            "",
+            "part '$TM_FILENAME_BASE.freezed.dart';",
+            "",
+            "@freezed",
+            "class ${1:${TM_FILENAME_BASE/(.*)/${1:/pascalcase}/g}} with _$${1} {",
+            "  const factory ${1}({",
+            "    required ${2:String id},",
+            "  }) = _${1};",
+            "}"
+        ],
+        "description": "Freezed State"
+    },
+    "Stateless": {
+        "prefix": "stateless",
+        "body": [
+            "import 'package:flutter/material.dart';",
+            "class HogePage extends StatelessWidget {",
+            "  const HogePage({",
+            "    Key? key,",
+            "  }) : super(key: key);",
+            "",
+            "  @override",
+            "  Widget build(BuildContext context) {",
+            "    return const Scaffold();",
+            "  }",
+            "}"
+        ],
+        "description": "Stateless"
+    },
+    "HookStateless": {
+        "prefix": "hookstateless",
+        "body": [
+            "import 'package:flutter/material.dart';",
+            "import 'package:hooks_riverpod/hooks_riverpod.dart';",
+            "",
+            "class HogePage extends HookConsumerWidget {",
+            "  const HogePage({",
+            "    Key? key,",
+            "  }) : super(key: key);",
+            "",
+            "  @override",
+            "  Widget build(BuildContext context, WidgetRef ref) {",
+            "    return const Scaffold();",
+            "  }",
+            "}",
+            ""
+        ],
+        "description": "HookStateless"
+    },
+    "mainDart": {
+        "prefix": "maindart",
+        "body": [
+            "import 'package:flutter/material.dart';",
+            "import 'package:hooks_riverpod/hooks_riverpod.dart';",
+            "",
+            "void main() async {",
+            "  runApp(const ProviderScope(child: MyApp()));",
+            "}",
+            "",
+            "class MyApp extends StatelessWidget {",
+            "  const MyApp({Key? key}) : super(key: key);",
+            "  @override",
+            "  Widget build(BuildContext context) {",
+            "    return const App();",
+            "  }",
+            "}"
+        ],
+        "description": "mainDart"
+    },
+    "provider": {
+        "prefix": "provider",
+        "body": [
+            "import 'package:hooks_riverpod/hooks_riverpod.dart';",
+            "",
+            "final hogeControllerProvider = StateNotifierProvider<",
+            "    HogeSearchController, HogeState>(",
+            "  (ref) => HogeController(",
+            "    reader: ref.read,",
+            "  ),",
+            ");",
+            ""
+        ],
+        "description": "provider"
+    },
+    "controller": {
+        "prefix": "controller",
+        "body": [
+            "import 'package:hooks_riverpod/hooks_riverpod.dart';",
+            "",
+            "class HogeController extends StateNotifier<HogeState> {",
+            "  HogeController({",
+            "    required this.reader,",
+            "  }) : super(const HogeState());",
+            "",
+            "  final Reader reader;",
+            "",
+            "}"
+        ],
+        "description": "controller"
+    }
+}
